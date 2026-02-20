@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Churn Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        input, select {
+            padding: 8px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 6px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9f7ef;
+            border-left: 5px solid #28a745;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Customer Churn Prediction</h1>
+
+    <form method="POST">
+
+        <div class="form-grid">
+            <input type="number" name="query1" placeholder="Senior Citizen (0/1)" required>
+            <input type="number" step="0.01" name="query2" placeholder="Monthly Charges" required>
+            <input type="number" step="0.01" name="query3" placeholder="Total Charges" required>
+            
+            <select name="query4">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <select name="query5">
+                <option value="Yes">Partner - Yes</option>
+                <option value="No">Partner - No</option>
+            </select>
+
+            <select name="query6">
+                <option value="Yes">Dependents - Yes</option>
+                <option value="No">Dependents - No</option>
+            </select>
+
+            <select name="query7">
+                <option value="Yes">Phone Service - Yes</option>
+                <option value="No">Phone Service - No</option>
+            </select>
+
+            <select name="query8">
+                <option value="Yes">Multiple Lines - Yes</option>
+                <option value="No">Multiple Lines - No</option>
+            </select>
+
+            <select name="query9">
+                <option value="DSL">DSL</option>
+                <option value="Fiber optic">Fiber optic</option>
+                <option value="No">No Internet</option>
+            </select>
+
+            <select name="query10">
+                <option value="Yes">Online Security - Yes</option>
+                <option value="No">Online Security - No</option>
+            </select>
+
+            <select name="query11">
+                <option value="Yes">Online Backup - Yes</option>
+                <option value="No">Online Backup - No</option>
+            </select>
+
+            <select name="query12">
+                <option value="Yes">Device Protection - Yes</option>
+                <option value="No">Device Protection - No</option>
+            </select>
+
+            <select name="query13">
+                <option value="Yes">Tech Support - Yes</option>
+                <option value="No">Tech Support - No</option>
+            </select>
+
+            <select name="query14">
+                <option value="Yes">Streaming TV - Yes</option>
+                <option value="No">Streaming TV - No</option>
+            </select>
+
+            <select name="query15">
+                <option value="Yes">Streaming Movies - Yes</option>
+                <option value="No">Streaming Movies - No</option>
+            </select>
+
+            <select name="query16">
+                <option value="Month-to-month">Month-to-month</option>
+                <option value="One year">One year</option>
+                <option value="Two year">Two year</option>
+            </select>
+
+            <select name="query17">
+                <option value="Yes">Paperless Billing - Yes</option>
+                <option value="No">Paperless Billing - No</option>
+            </select>
+
+            <select name="query18">
+                <option value="Electronic check">Electronic check</option>
+                <option value="Mailed check">Mailed check</option>
+                <option value="Bank transfer (automatic)">Bank transfer</option>
+                <option value="Credit card (automatic)">Credit card</option>
+            </select>
+
+            <input type="number" name="query19" placeholder="Tenure (months)" required>
+        </div>
+
+        <button type="submit">Predict</button>
+
+    </form>
+
+    {% if output1 %}
+    <div class="result">
+        <h3>{{ output1 }}</h3>
+        <p>{{ output2 }}</p>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
